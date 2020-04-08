@@ -1,48 +1,157 @@
-* {
-    box-sizing: border-box;
-}
+/*mobile device defualt */
 
 body {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    /*height: 100vh;*/
+    grid-template-columns: repeat(3, auto);
+    width: 100%;
+    margin: 0 auto;
+    grid-template-areas:
+    ". alert-info ."
+    ". company ."
+    ". nav ."
+    ". img ."
+    ". main ."
+    ". sub-section ."
+    ". footer .";
 }
 
 nav {
+    width: 100%;
+    grid-area: nav;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    grid-area: 3 / 2 / span 1 / span 1;
+    justify-content: center;
 }
-.nav-links a {
-    background-color: grey;
+ul {
+    margin: 0 4px 0 4px;
+
+}
+
+li a {
+    display: flex;
+    /*width: 100%;*/
+    margin: 10px 0 10px 0;
+    background: grey;
+    justify-content: center;
+}
+
+nav ul {
+    padding-inline-start: 0;
+}
+.nav-links  {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    /*align-items: center;*/
 }
 
 .alert-info {
+    background-color: #CCFEFF;
+    margin: 10px;
+    border: 2px solid grey;
+    grid-area: alert-info;
     display: flex;
     align-items: center;
-    grid-area: 1 / 2 / span 1 / span 1;
+    justify-content: center;
 }
 
+img {
+    height: 339px;
+    width: 290px;
+}
+
+
 html body h1 {
-    grid-area: 2 / 2 / 2 / 2;  /* this is the h1 HEADER */
+     /* this is the h1 HEADER */
+    grid-area: company;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .header-img {
-    grid-area: 4 / 2 / 4 / 2;
+    width: 100%;
+    grid-area: img;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #main  {
-    grid-area: 5 / 2 / 5 / 2;
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .sub-section {
-    grid-area: 6 / 2 / 6 / 2;
+    flex-direction: column;
+    grid-area: sub-section;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 footer {
-    grid-area: 7 / 2 / 7 / 2;
+    width: 100%;
+    grid-area: footer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+/* desktop */
+@media screen and (min-width: 100px) {
+    body{
+        grid-template-columns: repeat(2, auto);
+        grid-template-rows: repeat(7, auto);
+        grid-template-areas:
+        "company nav"
+        "img img"
+        "main sub-section"
+        ". ."
+        ". ."
+        ". ."
+        "footer footer"
+        ". .";
+    }
+
+    nav {
+        display: block;
+        grid-area: nav;
+    }
+
+    .alert-info {
+        grid-area: alert-info;
+    }
+
+    .header-img {
+        grid-area: img;
+    }
+
+    #main {
+        grid-area: main;
+    }
+
+    .sub-section {
+        grid-area: sub-section;
+    }
+
+    footer {
+        grid-area: footer;
+    }
+
+    html body h1 {
+        grid-area: company;
+    }
+    .alert-info {
+        display: none;
+    }
+
+}
+
+
+
 
 
 
