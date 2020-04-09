@@ -21,13 +21,14 @@ nav {
     justify-content: center;
 }
 ul {
-    margin: 0 4px 0 4px;
+    margin: 0 5px 0 5px;
 }
 
 li a {
     display: flex;
     width: 100%; /* this makes the background color spam entire webpage */
-    margin: 10px 0 10px 0;
+    margin: 10px 5px 10px 5px;
+    padding: 10px;
     background: grey;
     justify-content: center;
 }
@@ -49,6 +50,7 @@ nav ul {
 .alert-info {
     background-color: #CCFEFF;
     margin: 10px;
+    padding: 10px;
     border: 2px solid grey;
     grid-area: alert-info;
     display: flex;
@@ -104,8 +106,8 @@ footer {
 /* desktop */
 @media screen and (min-width: 700px) {
     body{
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(5, 1fr);
+        grid-template-columns: repeat(2, auto);
+        grid-template-rows: repeat(5, auto);
         grid-template-areas:
         "company nav"
         "img img"
@@ -158,12 +160,16 @@ footer {
     }
 
     img {
+        display: block;
         height: 400px;
         width: 900px;
     }
 
     footer {
         grid-area: footer;
+        display: flex;
+        justify-content: flex-start;
+        padding-top: 100px;
     }
 
     html body h1 {
