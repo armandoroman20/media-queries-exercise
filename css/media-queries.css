@@ -157,13 +157,22 @@ footer {
         grid-area: sub-section;
     }
 
+    img {
+        height: 400px;
+        width: 900px;
+    }
+
     footer {
         grid-area: footer;
     }
 
     html body h1 {
         grid-area: company;
+        display: block;
+        float: left;
     }
+
+
     .alert-info {
         display: none;
     }
