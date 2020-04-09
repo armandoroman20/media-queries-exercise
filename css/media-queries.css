@@ -170,8 +170,8 @@ footer {
         grid-area: company;
         display: block;
         float: left;
+        padding: 12px;
     }
-
 
     .alert-info {
         display: none;
